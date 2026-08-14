@@ -1,0 +1,7 @@
+# dsh-layout-tools bundle patch: inserts the plugin row into the web profile
+# roster. The node half (exports ".") runs in the host process (fs + git
+# status routes), and the dsh.client declaration in package.json makes the
+# browser half (exports "./client") load in the web GUI.
+- insert:
+    - id: dsh-layout-tools
+      name: 'dsh-layout-tools'
