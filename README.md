@@ -20,7 +20,7 @@ dsh plugin --profile web add "github:dHR-P/dsh-layout-tools"
 
 - 窗口宽度 > 1700px 时左右面板自动展开；≤ 1700px 时面板隐藏（避免挤压对话区），需要时点击屏幕边缘的 `▶` / `◀` 手柄临时展开
 - 面板头部按钮：左面板 `⟳` 刷新文件树与 git 状态，`«` / `»` 收起对应面板
-- 文件树：点击目录懒加载展开/收起子目录；git 着色随分支切换和文件变更自动刷新（手动刷新用 `⟳`）
+- 文件树：点击目录懒加载展开/收起子目录；**点击文件用系统默认程序打开**（如记事本 / VSCode，与 Windows 资源管理器双击行为一致）；git 着色随分支切换和文件变更自动刷新（手动刷新用 `⟳`）
 - 工具卡片：点击展开/收起参数、错误与结果文本；Think 块同样可展开
 
 ## 卸载
@@ -35,7 +35,7 @@ dsh plugin --profile web remove dsh-layout-tools
 
 - 目标版本：`@deepseek-ai/dsh` 0.1.0-rc.6 系列（peerDependencies 已声明）
 - 实现依赖官方 UI 的稳定标记：`data-chat-flow-kind`（对话节点）、`data-variant="think"`（思考行）、slot 契约 `conversation.chat.node` / `conversation.input.dock`。官方 UI 升级若调整这些标记，本插件可能失效——欢迎提 issue / PR
-- host 侧提供 `/dsh-layout/*` 路由（`fs-list` / `git-status` / `git-branches` / `git-switch` / `git-log`），路径经 realpath 校验必须位于已注册工作区内（与官方 git-graph 插件同款安全边界）
+- host 侧提供 `/dsh-layout/*` 路由（`fs-list` / `git-status` / `git-branches` / `git-switch` / `git-log` / `open-file`），路径经 realpath 校验必须位于已注册工作区内（与官方 git-graph 插件同款安全边界）；`open-file` 通过 `cmd /c start` 调用系统 ShellExecute，仅在 Windows 上可用
 
 ## 开发
 
