@@ -57,6 +57,15 @@ dsh-layout-tools/
 dsh plugin --profile web add link:/绝对/路径/dsh-layout-tools
 ```
 
+## 参考
+
+本插件的设计与实现参考了以下项目，致谢：
+
+- [@linxin666/dsh-client-ui-git-graph](https://github.com/linxin666/dsh-client-ui-git-graph) — host 侧路由 / 子进程封装 / 工作区安全边界的模式参考（`/dsh-layout/*` 路由、`subprocessRunner`、`parseStatusZ` 均沿袭其设计）
+- [omdsh-dev/DSH-better-sidebar](https://github.com/omdsh-dev/DSH-better-sidebar) — 侧边栏工作台架构参考（会话作用域 API、浏览器端与 host 通信的 wire 设计）
+- [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) 官方 slot 契约（`conversation.chat.node` / `conversation.input.dock`）、DOM 标记（`data-chat-flow-kind` / `data-variant="think"`）与预设组合文档
+- 配套预设 [dsh-anchored-wsl](https://github.com/dHR-P/dsh-anchored-wsl) — 极简锚定两阶段模式（首轮极简 + 标准工具）
+
 ## 许可
 
 MIT
