@@ -52,5 +52,6 @@
     "@deepseek-ai/dsh-workspace": "^0.1.0-rc.6",
     "react": "^18.2.0"
   },
+  "repository": "github:dHR-P/dsh-layout-tools",
   "license": "MIT"
 }
