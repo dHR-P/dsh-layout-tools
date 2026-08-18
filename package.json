@@ -1,6 +1,6 @@
 {
   "name": "dsh-layout-tools",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "DSH Web 三栏工作台：对话流只保留 AI 输出（工具调用/思考移入右侧面板），左侧工作区文件树带 git 状态徽标。Three-column workbench for the DSH web GUI: clean conversation flow, workspace file tree with git badges, and a live tool-call/think panel.",
   "type": "module",
   "main": "lib/index.js",
